@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+
+    <Button
+        android:id="@+id/waterMe"
+        android:layout_width="156dp"
+        android:layout_height="56dp"
+        android:text="Water Me"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <Button
+        android:id="@+id/tipsandtricks"
+        android:layout_width="155dp"
+        android:layout_height="56dp"
+        android:text="Tips and Tricks"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:id="@+id/ViewMyPlants"
+        android:layout_width="154dp"
+        android:layout_height="54dp"
+        android:text="View My Plants"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/addPlant"
+        android:layout_width="154dp"
+        android:layout_height="56dp"
+        android:text="Add a Plant"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <Button
+        android:id="@+id/WhatsNext"
+        android:layout_width="155dp"
+        android:layout_height="56dp"
+        android:layout_weight="0.02"
+        android:text="What's Next?"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+</LinearLayout>

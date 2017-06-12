@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/plantNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plant Name: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+    <TextView
+        android:id="@+id/WaterFrequencyTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watering Frequency: Every"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+    <TextView
+        android:id="@+id/OptimalSeasonTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Optimal Season: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Reminder Off"
+        android:textOn="Reminder On" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Plant" />
+
+</LinearLayout>

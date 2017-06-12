@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WaterMindr</string>
+    <string name="title_activity_add_plant">AddPlantActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>
