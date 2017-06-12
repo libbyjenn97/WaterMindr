@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button addPlantBtn;
     Button whatsNextBtn;
     Button viewMyPlantsBtn;
+    Button tipsAndTricksBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         addPlantBtn = (Button) findViewById(R.id.addPlant);
         whatsNextBtn = (Button) findViewById(R.id.WhatsNext);
         viewMyPlantsBtn = (Button) findViewById(R.id.ViewMyPlants);
+        tipsAndTricksBtn = (Button) findViewById(R.id.tipsandtricks);
 
         //set on click listeners to open activities
         addPlantBtn.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Intent myIntent = new Intent(MainActivity.this, ViewMyPlantsActivity.class);
+                startActivity(myIntent); //start
+            }
+        });
+
+        //set on click listeners to open activities
+        tipsAndTricksBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent = new Intent(MainActivity.this, GardeningVideosActivity.class);
                 startActivity(myIntent); //start
             }
         });

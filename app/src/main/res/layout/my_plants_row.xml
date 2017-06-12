@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/plantNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plant Name: "
+        android:text=" "
+        android:textSize="40dp"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     <TextView
         android:id="@+id/WaterFrequencyTV"
@@ -22,18 +27,26 @@
         android:text="Optimal Season: "
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ToggleButton"
-        android:textOff="Reminder Off"
-        android:textOn="Reminder On" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete Plant" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete Plant" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textOff="Reminder Off"
+            android:textOn="Reminder On" />
+    </LinearLayout>
 
 </LinearLayout>

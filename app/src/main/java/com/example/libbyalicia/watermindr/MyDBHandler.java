@@ -78,8 +78,8 @@ class MyDBHandler extends SQLiteOpenHelper {
             while (!cursor.isAfterLast()) {
                 pGuide.setID(Integer.parseInt(cursor.getString(0))); //set id
                 pGuide.setName(cursor.getString(1)); //set name
-                pGuide.setOptimalSeason(cursor.getString(2)); //set optimal season
-                pGuide.setWaterFrequency(Long.parseLong(cursor.getString(3))); //set watering frequency
+                pGuide.setWaterFrequency(Long.parseLong(cursor.getString(2))); //set watering frequency
+                pGuide.setOptimalSeason(cursor.getString(3)); //set optimal season
                 plantGuideList.add(new PlantGuide(pGuide.getName(), pGuide.getWaterFrequency(), pGuide.getOptimalSeason())); //add to list
                 cursor.moveToNext(); //go to next plant guide
             }
