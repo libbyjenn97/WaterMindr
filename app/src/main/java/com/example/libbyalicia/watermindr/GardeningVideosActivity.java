@@ -18,7 +18,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class GardeningVideosActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     public static final String API_KEY = "AIzaSyCrssPDFpJRI5EP-Q6_qB1q-yY7yh0nXjg"; //set your own api key
-    public static final String PLAYLIST_ID = "PLF36F2ABD7AD79803"; //set playlist ID of youtube video
+    public static final String PLAYLIST_ID = "PL5mfR-r4BXH2_CnQBJguO1QKANFReaQ2f"; //set playlist ID of youtube video
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
