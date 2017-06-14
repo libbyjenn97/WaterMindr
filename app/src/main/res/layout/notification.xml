@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Time to water your plant!"
         android:layout_gravity="center"
-        android:textColor="@color/colorAccent"
+        android:gravity="center"
+        android:textColor="@color/ColorTitle"
         android:textSize="@dimen/title"/>
 </LinearLayout>

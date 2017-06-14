@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gardening Videos"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/ColorTitle"
         android:textSize="@dimen/title"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"

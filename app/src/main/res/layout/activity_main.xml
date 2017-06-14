@@ -16,9 +16,9 @@
         android:layout_width="156dp"
         android:layout_height="56dp"
         android:text="Water Me"
+        tools:ignore="HardcodedText"
         tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="266dp"
-        tools:ignore="HardcodedText" />
+        tools:layout_editor_absoluteY="266dp" />
 
     <Button
         android:id="@+id/tipsandtricks"

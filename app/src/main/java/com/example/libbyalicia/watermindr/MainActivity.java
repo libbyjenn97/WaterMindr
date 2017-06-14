@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button waterMeBtn;
     Button addPlantBtn;
     Button whatsNextBtn;
     Button viewMyPlantsBtn;
@@ -18,10 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        waterMeBtn = (Button) findViewById(R.id.waterMe);
         addPlantBtn = (Button) findViewById(R.id.addPlant);
         whatsNextBtn = (Button) findViewById(R.id.WhatsNext);
         viewMyPlantsBtn = (Button) findViewById(R.id.ViewMyPlants);
         tipsAndTricksBtn = (Button) findViewById(R.id.tipsandtricks);
+
+        //set on click listeners to open activities
+        waterMeBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent = new Intent(MainActivity.this, WaterPlantActivity.class);
+                startActivity(myIntent); //start
+            }
+        });
 
         //set on click listeners to open activities
         addPlantBtn.setOnClickListener(new View.OnClickListener() {

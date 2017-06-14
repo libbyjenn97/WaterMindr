@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Plant Name"
         android:textSize="@dimen/title"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/ColorTitle"
         android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     <TextView
