@@ -75,11 +75,19 @@ public class MainActivity extends AppCompatActivity {
         //3 = every mon, tues, weds
         //5 = every weekday
         //7 = everyday
+        dbHandler.addPlantGuide(new PlantGuide("Broccoli", 3, "Autumn"));
+        dbHandler.addPlantGuide(new PlantGuide("Cabbage", 1, "Spring"));
         dbHandler.addPlantGuide(new PlantGuide("Cactus", 1, "Summer"));
-        dbHandler.addPlantGuide(new PlantGuide("Sun Flower", 7, "Summer"));
-        dbHandler.addPlantGuide(new PlantGuide("Tulip", 7, "Spring"));
-        dbHandler.addPlantGuide(new PlantGuide("Rose", 5, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Cucumber", 3, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Eggplant", 1, "Summer"));
         dbHandler.addPlantGuide(new PlantGuide("Garlic", 3, "Winter"));
+        dbHandler.addPlantGuide(new PlantGuide("Lettuce", 7, "Winter"));
+        dbHandler.addPlantGuide(new PlantGuide("Peas", 1, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Red Onion", 7, "Winter"));
+        dbHandler.addPlantGuide(new PlantGuide("Rose", 5, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Sun Flower", 7, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Tomatoes", 3, "Spring"));
+        dbHandler.addPlantGuide(new PlantGuide("Tulip", 7, "Spring"));
 
     }
 }
