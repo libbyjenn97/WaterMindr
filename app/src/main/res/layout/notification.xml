@@ -8,4 +8,10 @@
         android:layout_width="fill_parent"
         android:layout_height="400dp"
         android:text="Time to water your plant!" />
+
+    <ListView
+        android:id="@+id/listView1"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

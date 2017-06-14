@@ -46,6 +46,12 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     }
 
+    public void addPlantToWater(Context context, PlantsToWater thePlant){
+
+        PlantsToWaterDBHandler dbHandler = new PlantsToWaterDBHandler(context, null, null, 1);
+        dbHandler.addPlant(thePlant);
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -53,8 +59,9 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         //this.context = context;
         // For our recurring task, we'll just display a message
-        Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Water Me!", Toast.LENGTH_SHORT).show();
         this.createNotification(context);
-
+        //((ViewMyPlantsActivity)context).
+        //this.addPlantToWater(context, thisPlant);
     }
 }
