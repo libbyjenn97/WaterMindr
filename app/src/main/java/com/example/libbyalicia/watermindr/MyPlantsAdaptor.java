@@ -49,7 +49,7 @@ public class MyPlantsAdaptor extends ArrayAdapter {
         convertView = inflater.inflate(R.layout.my_plants_row, parent, false);
 
         TextView name = (TextView) convertView.findViewById(R.id.plantNameTV); //checkbox text view
-        name.append(myPlantsList.get(position).getName()); //set checkbox from goals list
+        name.setText(myPlantsList.get(position).getName()); //set checkbox from goals list
 
         Long waterFrequency = myPlantsList.get(position).getWaterFrequency();
         String waterDays = "";
