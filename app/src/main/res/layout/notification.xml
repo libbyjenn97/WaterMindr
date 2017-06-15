@@ -13,4 +13,10 @@
         android:gravity="center"
         android:textColor="@color/ColorTitle"
         android:textSize="@dimen/title"/>
+
+    <ListView
+        android:id="@+id/listView1"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

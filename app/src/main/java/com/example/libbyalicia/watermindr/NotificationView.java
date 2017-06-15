@@ -1,5 +1,7 @@
 package com.example.libbyalicia.watermindr;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -28,14 +30,42 @@ public class NotificationView extends AppCompatActivity {
     TextView plantTextView;
     CheckBox checkBox1;
     public List<PlantsToWater> toWater = new ArrayList<PlantsToWater>(); //initialise goals list
+    PlantsToWaterAdaptor adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         toWater.clear(); //clear goal list just in case
-        //deleteAll(); //delete all goals if neccessary for testing purposes
+
+        PlantsToWaterDBHandler dbHandler = new PlantsToWaterDBHandler(this, null, null, 1);
+        //dbHandler.deleteAllPlants();
         showGoals(); //show goals from database
+
+        if(toWater.isEmpty()){
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+            // set title
+            alertDialogBuilder.setTitle("Well Done!");
+
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage("Looks like you've watered all of your plants for the week! " +
+                            "Keep it Up!")
+                    .setCancelable(false)
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+
+                        }
+                    });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
+        }
 
         setContentView(R.layout.notification);
 
@@ -50,7 +80,7 @@ public class NotificationView extends AppCompatActivity {
         goalsList.add(new Goals("burger", 1));
         goalsList.add(new Goals("sausage", 1));*/
 
-        final PlantsToWaterAdaptor adapter = new PlantsToWaterAdaptor(this, toWater);
+        adapter = new PlantsToWaterAdaptor(this, toWater);
         lv.setAdapter(adapter);
     }
 
@@ -61,5 +91,7 @@ public class NotificationView extends AppCompatActivity {
         toWater = dbHandler.findPlants(); //add the foudn goals to a local array list
     }
 
-
+    public void updateAdaptor(){
+        adapter.notifyDataSetChanged();
+    }
 }

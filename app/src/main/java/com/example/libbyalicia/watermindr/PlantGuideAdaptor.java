@@ -51,21 +51,16 @@ public class PlantGuideAdaptor extends ArrayAdapter {
 
         if(waterFrequency == 1){
 
-            waterDays = " Saturday";
+            waterDays = "Once a week";
         }
         else if (waterFrequency == 3){
 
-            waterDays = " Monday, Tuesday, Wednesday";
-        }
-
-        else if(waterFrequency == 5){
-
-            waterDays = " Weekday";
+            waterDays = "Every Second Day";
         }
 
         else if (waterFrequency == 7){
 
-            waterDays = "day";
+            waterDays = "Every Day";
         }
 
         String waterFrequencyString = Long.toString(waterFrequency);

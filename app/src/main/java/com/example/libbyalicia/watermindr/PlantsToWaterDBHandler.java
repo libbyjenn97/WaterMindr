@@ -38,7 +38,7 @@ class PlantsToWaterDBHandler extends SQLiteOpenHelper {
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " +
                 TABLE_PLANTS_TO_WATER + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_NAME
-                + " TEXT," + ")";
+                + " TEXT" + ")";
         db.execSQL(CREATE_PRODUCTS_TABLE);
     }
 

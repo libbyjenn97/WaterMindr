@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         waterMeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                Intent myIntent = new Intent(MainActivity.this, WaterPlantActivity.class);
+                //Intent myIntent = new Intent(MainActivity.this, WaterPlantActivity.class);
+                Intent myIntent = new Intent(MainActivity.this, NotificationView.class);
                 startActivity(myIntent); //start
             }
         });
@@ -82,9 +83,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Insert: ", "Inserting ..");
 
         //Watering frequency: 1, 3, 5 & 7
-        //1 = every saturday
-        //3 = every mon, tues, weds
-        //5 = every weekday
+        //1 = once a week
+        //3 = every second day
         //7 = everyday
         dbHandler.addPlantGuide(new PlantGuide("Broccoli", 3, "Autumn"));
         dbHandler.addPlantGuide(new PlantGuide("Cabbage", 1, "Spring"));
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         dbHandler.addPlantGuide(new PlantGuide("Lettuce", 7, "Winter"));
         dbHandler.addPlantGuide(new PlantGuide("Peas", 1, "Summer"));
         dbHandler.addPlantGuide(new PlantGuide("Red Onion", 7, "Winter"));
-        dbHandler.addPlantGuide(new PlantGuide("Rose", 5, "Summer"));
+        dbHandler.addPlantGuide(new PlantGuide("Rose", 3, "Summer"));
         dbHandler.addPlantGuide(new PlantGuide("Sun Flower", 7, "Summer"));
         dbHandler.addPlantGuide(new PlantGuide("Tomatoes", 3, "Spring"));
         dbHandler.addPlantGuide(new PlantGuide("Tulip", 7, "Spring"));

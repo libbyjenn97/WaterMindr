@@ -16,7 +16,9 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+
 import java.util.logging.Handler;
+
 import android.os.CountDownTimer;
 
 import java.util.ArrayList;
@@ -36,6 +38,7 @@ public class PlantsToWaterAdaptor extends ArrayAdapter {
         this.toWater = resource;
 
     }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
@@ -44,7 +47,7 @@ public class PlantsToWaterAdaptor extends ArrayAdapter {
         final TextView name = (TextView) convertView.findViewById(R.id.toWaterTV); //checkbox text view
         final CheckBox cb = (CheckBox) convertView.findViewById(R.id.checkBox1); //the checkbox
         name.setText(toWater.get(position).getName()); //set checkbox from goals list
-        thisPlant.setName(name.toString());
+        //thisPlant.setName(name.toString());
 
         cb.setChecked(false);
         //Set goal to completed/checked when clicked
@@ -57,42 +60,33 @@ public class PlantsToWaterAdaptor extends ArrayAdapter {
                                               //goalsList.get(position).value = 1;
 
 
-                                              CountDownTimer timer = new CountDownTimer(5000, 5000) {
-                                                  public void onTick(long millisUntilFinished) {
-                                                  }
+                                              removeGoal(toWater.get(position).getName());
+                                              toWater.remove(position);
 
-                                                  public void onFinish() {
+                                              AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                                                      context);
 
-                                                      removeGoal(name.toString());
+                                              // set title
+                                              alertDialogBuilder.setTitle("Congratulations!");
 
-                                                      AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                                                              context);
+                                              // set dialog message
+                                              alertDialogBuilder
+                                                      .setMessage("Well done on watering you plant!")
+                                                      .setCancelable(false)
+                                                      .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                                          public void onClick(DialogInterface dialog, int id) {
 
-                                                      // set title
-                                                      alertDialogBuilder.setTitle("Congratulations!");
+                                                              ((NotificationView)context).updateAdaptor();
+                                                          }
+                                                      });
 
-                                                      // set dialog message
-                                                      alertDialogBuilder
-                                                              .setMessage("Well done on watering you plant!")
-                                                              .setCancelable(false)
-                                                              .setPositiveButton("OK",new DialogInterface.OnClickListener() {
-                                                                  public void onClick(DialogInterface dialog,int id) {
-                                                                      // if this button is clicked, close
-                                                                      // current activity
-                                                                  }
-                                                              });
+                                              // create alert dialog
+                                              AlertDialog alertDialog = alertDialogBuilder.create();
 
-                                                      // create alert dialog
-                                                      AlertDialog alertDialog = alertDialogBuilder.create();
+                                              // show it
+                                              alertDialog.show();
 
-                                                      // show it
-                                                      alertDialog.show();
-                                                  }
-                                              };
-
-
-                                          }
-
+                                          };
 
 
                                       }
@@ -113,5 +107,9 @@ public class PlantsToWaterAdaptor extends ArrayAdapter {
         } else
             Log.d("my tag", "not found"); //confirm not found
     }
+
+    /*public PlantsToWater getPlantName() {
+        return thisPlant;
+    }*/
 
 }

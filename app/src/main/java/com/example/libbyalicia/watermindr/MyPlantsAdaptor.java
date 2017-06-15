@@ -34,6 +34,7 @@ import java.util.List;
 public class MyPlantsAdaptor extends ArrayAdapter {
     Context context;
     List<MyPlants> myPlantsList = new ArrayList<MyPlants>(); //initialise goal list
+    public static PlantsToWater thisPlant = new PlantsToWater();
 
     public MyPlantsAdaptor(Context context, List<MyPlants> resource) {
         super(context, R.layout.my_plants_row, resource);
@@ -48,7 +49,7 @@ public class MyPlantsAdaptor extends ArrayAdapter {
         final LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         convertView = inflater.inflate(R.layout.my_plants_row, parent, false);
 
-        TextView name = (TextView) convertView.findViewById(R.id.plantNameTV); //checkbox text view
+        final TextView name = (TextView) convertView.findViewById(R.id.plantNameTV); //checkbox text view
         name.setText(myPlantsList.get(position).getName()); //set checkbox from goals list
 
         Long waterFrequency = myPlantsList.get(position).getWaterFrequency();
@@ -56,21 +57,16 @@ public class MyPlantsAdaptor extends ArrayAdapter {
 
         if(waterFrequency == 1){
 
-            waterDays = " Saturday";
+            waterDays = "Once a week";
         }
         else if (waterFrequency == 3){
 
-            waterDays = " Monday, Tuesday, Wednesday";
-        }
-
-        else if(waterFrequency == 5){
-
-            waterDays = " Weekday";
+            waterDays = "Every Second Day";
         }
 
         else if (waterFrequency == 7){
 
-            waterDays = "day";
+            waterDays = "Every Day";
         }
 
         String waterFrequencyString = Long.toString(waterFrequency);
@@ -85,14 +81,72 @@ public class MyPlantsAdaptor extends ArrayAdapter {
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Long waterFrequency = myPlantsList.get(position).getWaterFrequency();
                 if (isChecked) {
 
-                    //((ViewMyPlantsActivity)context).createNotification();
-                    ((ViewMyPlantsActivity)context).start();
+                    //set notification once a week
+                    if(waterFrequency == 1){
+
+                        ((ViewMyPlantsActivity)context).startOnceWeek();
+                        ((ViewMyPlantsActivity)context).start(); //call for testing
+                    }
+                    //set notification every second day
+                    else if (waterFrequency == 3){
+
+                        ((ViewMyPlantsActivity)context).startEverySecondDay();
+                        ((ViewMyPlantsActivity)context).start(); //call for testing
+                    }
+
+                    //set notification everyday
+                    else if (waterFrequency == 7){
+
+                        ((ViewMyPlantsActivity)context).startEveryDay();
+                        ((ViewMyPlantsActivity)context).start(); //call for testing
+
+                    }
+
+                    String plantName = myPlantsList.get(position).getName();
+                    thisPlant.setName(plantName);
 
                 } else {
-                    // The toggle is disabled
+                    ((ViewMyPlantsActivity)context).cancel();
+
                 }
+            }
+        });
+
+        Button deletePlantBtn = (Button) convertView.findViewById(R.id.deletePlantBtn);
+        deletePlantBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                MyPlantDBHandler dbHandler = new MyPlantDBHandler(context, null, null, 1);
+
+                String plantName = myPlantsList.get(position).getName();
+
+                dbHandler.deleteMyPlant(plantName);
+                myPlantsList.remove(position);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+                // set title
+                alertDialogBuilder.setTitle("Plant Deleted");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Your plant has been deleted.")
+                        .setCancelable(false)
+                        .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+
+                                ((ViewMyPlantsActivity)context).updateAdaptor();
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
             }
         });
 
@@ -100,14 +154,7 @@ public class MyPlantsAdaptor extends ArrayAdapter {
 
     }
 
-    private int mGlobalVarValue;
-
-    public int getGlobalVarValue() {
-        return mGlobalVarValue;
+    public static PlantsToWater getPlantName() {
+        return thisPlant;
     }
-
-    public void setGlobalVarValue(int str) {
-        mGlobalVarValue = str;
-    }
-
 }

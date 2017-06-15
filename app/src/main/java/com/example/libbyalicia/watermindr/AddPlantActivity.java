@@ -25,6 +25,7 @@ public class AddPlantActivity extends AppCompatActivity {
 
     private GridView gridView;
     public List<PlantGuide> plantGuideList = new ArrayList<PlantGuide>(); //initialise goals list
+    public PlantGuideAdaptor adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +48,10 @@ public class AddPlantActivity extends AppCompatActivity {
 
         }
 
-
         gridView = (GridView) findViewById(R.id.gridView1);
 
 
-        final PlantGuideAdaptor adapter = new PlantGuideAdaptor(this, plantGuideList);
+        adapter = new PlantGuideAdaptor(this, plantGuideList);
         gridView.setAdapter(adapter);
 
         /*gridView.setOnItemClickListener(new OnItemClickListener() {
