@@ -23,14 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddPlantActivity" />
-        <activity android:name=".WaterPlantActivity" />
+        <activity android:name=".AddPlantActivity"
+            android:label="Add a New Plant"/>
         <activity android:name=".GardeningVideosActivity" />
         <activity android:name=".WhatsNextActivity"
-            android:label="what's next?"/>
-        <activity android:name=".ViewMyPlantsActivity" />
+            android:label="What's Next?"/>
+        <activity android:name=".ViewMyPlantsActivity"
+            android:label="Your Current Plants"/>
         <activity android:name=".NotificationView"
-            android:label="Details of notification">
+            android:label="Water These Plants">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewMyPlantsActivity"/>

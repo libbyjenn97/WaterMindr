@@ -2,4 +2,21 @@
     <string name="app_name">WaterMindr</string>
     <string name="title_activity_add_plant">AddPlantActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="tips_and_tricks">Tips and Tricks</string>
+    <string name="view_my_plants">View My Plants</string>
+    <string name="water_me">Water Me</string>
+    <string name="what_s_next">What\'s Next?</string>
+    <string name="clip_art_gardnning_image">Clip art gardnning image</string>
+    <string name="add_a_plant">Add a Plant</string>
+    <string name="gardening_videos">Gardening Videos</string>
+    <string name="delete_plant">Delete Plant</string>
+    <string name="optimal_season">Optimal Season:</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="reminder_off">Reminder Off</string>
+    <string name="reminder_on">Reminder On</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="watering_frequency">Watering Frequency:</string>
+    <string name="water_your_plant">Time to water your plants!</string>
+    <string name="textview">TextView</string>
+    <string name="add_plant">Add Plant!</string>
 </resources>

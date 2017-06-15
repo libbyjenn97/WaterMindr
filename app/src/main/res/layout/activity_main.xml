@@ -15,8 +15,7 @@
         android:id="@+id/waterMe"
         android:layout_width="156dp"
         android:layout_height="56dp"
-        android:text="Water Me"
-        tools:ignore="HardcodedText"
+        android:text="@string/water_me"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="266dp" />
 
@@ -24,7 +23,7 @@
         android:id="@+id/tipsandtricks"
         android:layout_width="155dp"
         android:layout_height="56dp"
-        android:text="Tips and Tricks"
+        android:text="@string/tips_and_tricks"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="334dp" />
 
@@ -32,7 +31,7 @@
         android:id="@+id/ViewMyPlants"
         android:layout_width="154dp"
         android:layout_height="54dp"
-        android:text="View My Plants"
+        android:text="@string/view_my_plants"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="126dp" />
 
@@ -42,14 +41,15 @@
         android:layout_height="56dp"
         android:text="Add a Plant"
         tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="196dp" />
+        tools:layout_editor_absoluteY="196dp"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/WhatsNext"
         android:layout_width="155dp"
         android:layout_height="56dp"
         android:layout_weight="0.02"
-        android:text="What's Next?"
+        android:text="@string/what_s_next"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="196dp" />
 
@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/garden"
         android:padding="0dp"
-        android:layout_weight="1.10" />
+        android:layout_weight="1.10"
+        android:contentDescription="@string/clip_art_gardnning_image" />
 
 </LinearLayout>

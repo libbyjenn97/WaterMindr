@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,26 +12,27 @@
         android:layout_height="wrap_content"
         android:textColor="@color/ColorTitle"
         android:textSize="@dimen/title"
-        android:text="Plant Name: "
+        android:text="@string/plant_name"
         android:layout_gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:ignore="SpUsage" />
     <TextView
         android:id="@+id/WaterFrequencyTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Watering Frequency: "
+        android:text="@string/watering_frequency"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     <TextView
         android:id="@+id/OptimalSeasonTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Optimal Season: "
+        android:text="@string/optimal_season"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
     <Button
         android:id="@+id/addPlantBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Plant!" />
+        android:text="@string/add_plant" />
 
 </LinearLayout>

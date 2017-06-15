@@ -7,4 +7,6 @@
     android:background="@drawable/gradient"
     tools:context="com.example.libbyalicia.watermindr.ViewMyPlantsActivity">
 
+<!--Displays all current plants when querying the database -->
+
 </android.support.constraint.ConstraintLayout>
