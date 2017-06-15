@@ -9,7 +9,10 @@
         android:id="@+id/plantNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/ColorTitle"
+        android:textSize="@dimen/title"
         android:text="Plant Name: "
+        android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     <TextView
         android:id="@+id/WaterFrequencyTV"

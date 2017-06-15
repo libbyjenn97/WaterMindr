@@ -44,7 +44,7 @@ public class PlantGuideAdaptor extends ArrayAdapter {
         convertView = inflater.inflate(R.layout.row, parent, false);
 
         TextView name = (TextView) convertView.findViewById(R.id.plantNameTV); //checkbox text view
-        name.append(plantGuideList.get(position).getName()); //set checkbox from goals list
+        name.setText(plantGuideList.get(position).getName()); //set checkbox from goals list
 
         Long waterFrequency = plantGuideList.get(position).getWaterFrequency();
         String waterDays = "";

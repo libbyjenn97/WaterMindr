@@ -21,11 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewMyPlantsActivity" />
         <activity android:name=".AddPlantActivity" />
         <activity android:name=".WaterPlantActivity" />
         <activity android:name=".GardeningVideosActivity" />
-        <activity android:name=".WhatsNextActivity" />
+        <activity android:name=".WhatsNextActivity"
+            android:label="what's next?"/>
+        <activity android:name=".ViewMyPlantsActivity" />
         <activity android:name=".NotificationView"
             android:label="Details of notification">
             <meta-data
